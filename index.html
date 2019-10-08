@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 <link rel="stylesheet" href="stylesheets/styles.css">
+
 </head>
 <body>
 
     <div class="navbar" id="myNavbar">
+      <a  href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
     <a href="#gallery" class="navbutton">Gallery</a>
     <a href="#news" class="navbutton">News</a>
     <a href="#contact" class="navbutton">Contact</a>
   </div>
+
+  <div class="navbar" id="navSmall"> <!-- Navbar for mobile/small screens -->
+    <a  href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+  <a href="#gallery" class="navbutton">Gallery</a>
+  <a href="#news" class="navbutton">News</a>
+  <a href="#contact" class="navbutton">Contact</a>
+</div>
 
 <div class="bgimg1">
   <div class="center-title">MY WEBSITE LOGO</div>
@@ -23,40 +36,137 @@
 
 <header class="gallery-header">Snowboarders</header>
 
-  <span class="flex-container2">
+<main class="flex-container2">
     <ul class="thumbnail-list">
       <li class="thumbnail-item">
-        <img src="img/chloekim.jpg" alt="Chloe Kim">
+        <img src="img/chloekim.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
       </li>
       <li class="thumbnail-item">
-        <img src="img/shaunwhite.jpg" alt="Shaun White">
+          <img src="img/shaunwhite.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
       </li>
       <li class="thumbnail-item">
-        <img src="img/haileylangland.jpg" alt="Hayley Langland">
+          <img src="img/haileylangland.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
       </li>
       <li class="thumbnail-item">
-        <img src="img/markmcmorris.jpg" alt="Mark McMorris">
+          <img src="img/markmcmorris.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
       </li>
       <li class="thumbnail-item">
-        <img src="img/maddiemastro.jpg" alt="Maddie Mastro">
+          <img src="img/maddiemastro.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
       </li>
       <li class="thumbnail-item">
-        <img src="img/marcuskleveland.jpg" alt="Marcus Kleveland">
+          <img src="img/marcuskleveland.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow">
       </li>
       <li class="thumbnail-item">
-        <img src="img/jamieanderson.jpg" alt="Jamie Anderson">
+          <img src="img/jamieanderson.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow">
       </li>
       <li class="thumbnail-item">
-        <img src="img/chriscorning.jpg" alt="Chris Corning">
+          <img src="img/chriscorning.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow">
       </li>
       <li class="thumbnail-item">
-        <img src="img/annagasser.jpg" alt="Anna Gasser">
+          <img src="img/annagasser.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow">
       </li>
   </ul>
 
-</span>
+</main>
+<div id="myModal" class="modal">
+<span class="close cursor" onclick="closeModal()">&times;</span>
+<div class="modal-content">
 
-<button class="see-more">See more</button>
+  <div class="mySlides">
+    <div class="numbertext">1 / 9</div>
+    <img src="img/chloekimsmall.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 9</div>
+    <img src="img/shaunwhitesmall.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 9</div>
+    <img src="img/haileylanglandsmall.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 9</div>
+    <img src="img/markmcmorrissmall.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 9</div>
+    <img src="img/maddiemastrosmall.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 9</div>
+    <img src="img/marcusklevelandsmall.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">7 / 9</div>
+    <img src="img/jamieandersonsmall.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">8 / 9</div>
+    <img src="img/chriscorningsmall.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">9 / 9</div>
+    <img src="img/annagassersmall.jpg" style="width:100%">
+  </div>
+
+  <!-- Next/previous controls -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="column">
+      <img class="demo" src="img/chloekim.jpg" onclick="currentSlide(1)" alt="Nature">
+    </div>
+
+    <div class="thumbnail-item">
+      <img class="demo" src="img/shaunwhite.jpg" onclick="currentSlide(2)" alt="Snow">
+    </div>
+
+    <div class="thumbnail-item">
+      <img class="demo" src="img/haileylangland.jpg" onclick="currentSlide(3)" alt="Mountains">
+    </div>
+
+    <div class="thumbnail-item">
+      <img class="demo" src="img/markmcmorris.jpg" onclick="currentSlide(4)" alt="Lights">
+    </div>
+
+    <div class="thumbnail-item">
+      <img class="demo" src="img/maddiemastro.jpg" onclick="currentSlide(5)" alt="Nature">
+    </div>
+
+    <div class="thumbnail-item">
+      <img class="demo" src="img/marcuskleveland.jpg" onclick="currentSlide(6)" alt="Snow">
+    </div>
+
+    <div class="thumbnail-item">
+      <img class="demo" src="img/jamieanderson.jpg" onclick="currentSlide(7)" alt="Mountains">
+    </div>
+
+    <div class="thumbnail-item">
+      <img class="demo" src="img/chriscorning.jpg" onclick="currentSlide(8)" alt="Lights">
+    </div>
+
+    <div class="thumbnail-item">
+      <img class="demo" src="img/annagasser.jpg" onclick="currentSlide(9)" alt="Lights">
+    </div>
+  </div>
+</div>
+
+
+<button type="button">See more</button>
 
 <div style="height:40px;background-color:#262626;font-size:36px"></div>
 
